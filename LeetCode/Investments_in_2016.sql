@@ -1,7 +1,7 @@
 ########################################################################################
 ########## QUESTION  ##########
 ########################################################################################
-
+/*
 Table: Insurance
 
 +-------------+-------+
@@ -50,12 +50,11 @@ The tiv_2015 value 10 is the same as the third and fourth records, and its locat
 
 The second record does not meet any of the two criteria. Its tiv_2015 is not like any other policyholders and its location is the same as the third record, which makes the third record fail, too.
 So, the result is the sum of tiv_2016 of the first and last record, which is 45.
-
+*/
 ########################################################################################
 ########## ANSWER  ##########
 ########################################################################################
 
-# Write your MySQL query statement below
 select round(sum(tiv_2016),2) as tiv_2016 from insurance
 where tiv_2015 in (
 select tiv_2015
