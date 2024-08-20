@@ -17,6 +17,7 @@
 * Profile
 * Roles
 * User Defined Types
+* Star vs Snowflake
 
 
 # Generic
@@ -168,6 +169,9 @@ Teradata Database supports two types of user-defined functions (UDFs) that allow
 
 - SQL UDFs
 - External UDFs
+
+# Star vs Snowflake 
+![image](https://github.com/user-attachments/assets/a2c6bc32-4e67-4233-8e06-50c1187f4a9f)
 
 
   
