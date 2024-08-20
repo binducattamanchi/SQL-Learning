@@ -1,7 +1,7 @@
 ########################################################################################
 ########## QUESTION  ##########
 ########################################################################################
-
+/*
 Table: RequestAccepted
 +----------------+---------+
 | Column Name    | Type    |
@@ -35,12 +35,10 @@ Output:
 Explanation: 
 The person with id 3 is a friend of people 1, 2, and 4, so he has three friends in total, which is the most number than any others.
 Follow up: In the real world, multiple people could have the same most number of friends. Could you find all these people in this case?
-
+*/
 ########################################################################################
 ########## ANSWER  ##########
 ########################################################################################
-  
-# Write your MySQL query statement below
 
 select id,count(*) as num from
 (select requester_id as id from requestaccepted
