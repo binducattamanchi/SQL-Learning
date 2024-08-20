@@ -1,3 +1,5 @@
+/* Regexp performs better than like */
+
 ############ 1
 
 SELECT *
