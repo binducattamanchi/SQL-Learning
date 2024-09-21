@@ -1,0 +1,39 @@
+-- The starting date is the only record in the userInput table, which has the following structure:
+
+-- input_date: the date and time of the first alarm (of a DATETIME type).
+-- Given the table, your task is to write a select statement which returns a single column alarm_date. This column should contain all dates (including the time) when the alarm clock will ring. The entries should be arranged in ascending chronological order.
+
+-- Example
+
+-- For the following table userInput
+
+-- input_date
+-- 2016-10-23 22:00:00
+-- the output should be
+
+-- alarm_date
+-- 2016-10-23 22:00:00
+-- 2016-10-30 22:00:00
+-- 2016-11-06 22:00:00
+-- 2016-11-13 22:00:00
+-- 2016-11-20 22:00:00
+-- 2016-11-27 22:00:00
+-- 2016-12-04 22:00:00
+-- 2016-12-11 22:00:00
+-- 2016-12-18 22:00:00
+-- 2016-12-25 22:00:00
+-- example
+
+create table alarmclock(alarm_dt datetime);
+insert into alarmclock(alarm_dt) values("2016-10-23 22:00:00");
+with recursive ac as( 
+    select alarm_dt from alarmclock 
+    union all
+    select alarm_dt+interval 7 day from ac 
+    where alarm_dt+interval 7 day<=(
+        select concat(year(alarm_dt),'-12-31') from alarmclock
+        )
+        )
+
+select alarm_dt from ac 
+order by alarm_dt asc;
