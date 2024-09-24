@@ -1,6 +1,7 @@
 /*
 Find the Second Highest Salary in Each Department
  Schema: Employees (EmployeeID, Name, DepartmentID, Salary)
+Data: (121,Bindu Cattamanchi,DSE,100000)
 */
 
  WITH RankedSalaries AS (
